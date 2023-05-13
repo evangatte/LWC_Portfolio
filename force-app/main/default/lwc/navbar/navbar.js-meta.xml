@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <isExposed>true</isExposed>
+    <capabilities>
+        <capability>lightningCommunity__RelaxedCSP</capability>
+    </capabilities>
+    <masterLabel>Navbar </masterLabel>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+        <targetConfigs>
+            <targetConfig targets="lightningCommunity__Default">
+                <property
+                    name="linkOneText"
+                    label="Link One Text"
+                    type="String"
+                    description="Enter the text to be displayed for link one"
+                    required="false"
+                />
+                <property
+                    name="linkOneURL"
+                    label="Link One URL"
+                    type="String"
+                    description="Enter the URL to be set for link one"
+                    required="false"
+                />
+                <property
+                    name="linkTwoText"
+                    label="Link Two Text"
+                    type="String"
+                    description="Enter the text to be displayed for link two"
+                    required="false"
+                />
+                <property
+                    name="linkTwoURL"
+                    label="Link Two URL"
+                    type="String"
+                    description="Enter the URL to be set for link two"
+                    required="false"
+                />
+                <property
+                    name="linkThreeText"
+                    label="Link Three Text"
+                    type="String"
+                    description="Enter the text to be displayed for link three"
+                    required="false"
+                />
+                <property
+                    name="linkThreeURL"
+                    label="Link Three URL"
+                    type="String"
+                    description="Enter the URL to be set for link three"
+                    required="false"
+                />
+                <property
+                    name="linkFourText"
+                    label="Link Four Text"
+                    type="String"
+                    description="Enter the text to be displayed for link four"
+                    required="false"
+                />
+                <property
+                    name="linkFourURL"
+                    label="Link Four URL"
+                    type="String"
+                    description="Enter the URL to be set for link four"
+                    required="false"
+                />
+                <property
+                    name="linkFiveText"
+                    label="Link Five Text"
+                    type="String"
+                    description="Enter the text to be displayed for link five"
+                    required="false"
+                />
+                <property
+                    name="linkFiveURL"
+                    label="Link Five URL"
+                    type="String"
+                    description="Enter the URL to be set for link five"
+                    required="false"
+                />
+                <property
+                    name="linkSixText"
+                    label="Link Six Text"
+                    type="String"
+                    description="Enter the text to be displayed for link six"
+                    required="false"
+                />
+                <property
+                    name="linkSixURL"
+                    label="Link Six URL"
+                    type="String"
+                    description="Enter the URL to be set for link six"
+                    required="false"
+                />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

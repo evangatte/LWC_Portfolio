@@ -1,0 +1,39 @@
+.top-nav {
+	display: flex;
+	width: 100%;
+	align-items: center;
+}
+
+.top-nav a:not(.logo) {
+	padding: 0px 16px;
+	text-decoration: none;	
+}
+
+.top-nav-left {
+	flex-grow: 1;
+	border: solid;
+	display: flex;
+	justify-content: center;
+}
+
+.top-nav-middle {
+	display: flex;
+	justify-content: center;
+	flex-grow: 1;
+	border: solid;
+}
+
+.top-nav-middle .logo {
+	text-decoration: none;
+	font-size: 40px;
+	color: black;
+}
+
+.top-nav-right {
+	flex-grow: 1;
+	border: solid;
+	display: flex;
+	justify-content: center;
+}
+
+  

@@ -1,0 +1,15 @@
+{
+  "packageDirectories": [
+    {
+      "path": "force-app",
+      "default": true
+    }
+  ],
+  "name": "demoSite",
+  "namespace": "demoSite",
+  "sfdcLoginUrl": "https://login.salesforce.com",
+  "sourceApiVersion": "56.0",
+  "packageAliases": {
+    "myPkgAlias": "0Ho000000000000001"
+  }
+}
