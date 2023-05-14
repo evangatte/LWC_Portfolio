@@ -1,6 +1,10 @@
-import { LightningElement, api } from 'lwc';
+import { LightningElement, api, wire } from "lwc";
+import communityId from "@salesforce/community/Id"
+import getCategories from "@salesforce/apex/Categories.getCategories";
+
 
 export default class Navbar extends LightningElement {
+
 
 	_linkOneText
 	set linkOneText(value) {
@@ -11,6 +15,7 @@ export default class Navbar extends LightningElement {
 		return this._linkOneText
 	}
 
+
 	_linkOneURL
 	set linkOneURL(value) {
 		this._linkOneURL = value;
@@ -19,6 +24,7 @@ export default class Navbar extends LightningElement {
 	get linkOneURL() {
 		return this._linkOneURL
 	}
+
 
 	_linkTwoText
 	set linkTwoText(value) {
@@ -29,6 +35,7 @@ export default class Navbar extends LightningElement {
 		return this._linkTwoText;
 	}
 
+
 	_linkTwoURL
 	set linkTwoURL(value) {
 		this._linkTwoURL = value;
@@ -38,6 +45,7 @@ export default class Navbar extends LightningElement {
 		return this._linkTwoURL;
 	}
 
+
 	_linkThreeText
 	set linkThreeText(value) {
 		this._linkThreeText = value;
@@ -46,6 +54,7 @@ export default class Navbar extends LightningElement {
 	get linkThreeText() {
 		return this._linkThreeText;
 	}
+
 
 	_linkThreeURL
 	set linkThreeURL(value) {
@@ -66,6 +75,7 @@ export default class Navbar extends LightningElement {
 		return this._linkFourText;
 	}
 
+
 	_linkFourURL
 	set linkFourURL(value) {
 		this._linkFourURL = value;
@@ -84,6 +94,7 @@ export default class Navbar extends LightningElement {
 	get linkFiveText() {
 		return this._linkFiveText;
 	}
+
 
 	_linkFiveURL
 	set linkFiveURL(value) {
@@ -113,6 +124,13 @@ export default class Navbar extends LightningElement {
 		return this._linkSixURL;
 	}
 
-
-
+    @wire(getCategories, {
+        communityId: communityId,
+        CategoryId: null,
+    })
+	handleCategories({ error, data }) {
+		if (data) {
+			console.log(JSON.parse(data));
+		}
+	}
 }

@@ -11,7 +11,6 @@
 
 .top-nav-left {
 	flex-grow: 1;
-	border: solid;
 	display: flex;
 	justify-content: center;
 }
@@ -20,7 +19,6 @@
 	display: flex;
 	justify-content: center;
 	flex-grow: 1;
-	border: solid;
 }
 
 .top-nav-middle .logo {
@@ -31,9 +29,14 @@
 
 .top-nav-right {
 	flex-grow: 1;
-	border: solid;
 	display: flex;
 	justify-content: center;
 }
 
-  
+.categories-container {
+	/* margin-left: auto; */
+	/* display: flex;
+	width: fit-content;
+	border: solid; */
+} 
+
