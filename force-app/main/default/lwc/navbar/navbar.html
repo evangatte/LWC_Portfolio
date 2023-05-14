@@ -2,9 +2,15 @@
 	<div class="navbar">
 		<div class="top-nav">
 			<div class="top-nav-left">
-				<a href={linkOneURL}>{linkOneText}</a>
-				<a href={linkTwoURL}>{linkTwoText}</a>
-				<a href={linkThreeURL}>{linkThreeText}</a>
+				<template lwc:if={linkOneText}>
+					<a href={linkOneURL}>{linkOneText}</a>
+				</template>
+				<template lwc:if={linkTwoText}>
+					<a href={linkTwoURL}>{linkTwoText}</a>
+				</template>
+				<template lwc:if={linkThreeText}>
+					<a href={linkThreeURL}>{linkThreeText}</a>
+				</template>
 			</div>
 
 			<div class="top-nav-middle">
@@ -12,14 +18,26 @@
 			</div>
 
 			<div class="top-nav-right">
-				<a href={linkFourURL}>{linkFourText}</a>
-				<a href={linkFiveURL}>{linkFiveText}</a>
-				<a href={linkSixURL}>{linkSixText}</a>
+				<template lwc:if={linkFourText}>
+					<a href={linkFourURL}>{linkFourText}</a>
+				</template>
+				<template lwc:if={linkFiveText}>
+					<a href={linkFiveURL}>{linkFiveText}</a>
+				</template>
+				<template lwc:if={linkSixText}>
+					<a href={linkSixURL}>{linkSixText}</a>
+				</template>
 			</div>
 		</div>
 
 		<div class="bottom-nav">
-			<div class="categories-container"></div>
+			<div class="categories-container">
+				<template for:each={categories} for:item="cat">
+					<div key={cat.Id} class="category">
+						<a href={cat.categoryURL}>{cat.fields.Name}</a>
+					</div>
+				</template>
+			</div>
 		</div>
 	</div>
 </template>

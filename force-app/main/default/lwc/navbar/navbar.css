@@ -4,9 +4,10 @@
 	align-items: center;
 }
 
-.top-nav a:not(.logo) {
+.navbar a:not(.logo) {
 	padding: 0px 16px;
 	text-decoration: none;	
+	cursor: pointer;
 }
 
 .top-nav-left {
@@ -33,10 +34,18 @@
 	justify-content: center;
 }
 
+.bottom-nav {
+	padding: 0px;
+}
+
 .categories-container {
-	/* margin-left: auto; */
-	/* display: flex;
-	width: fit-content;
-	border: solid; */
+	margin: 0px;
+	padding: 10px 0px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 } 
 
+.category {
+	padding: 0px 16px;
+}

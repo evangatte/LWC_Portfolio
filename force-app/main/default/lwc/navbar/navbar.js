@@ -4,8 +4,6 @@ import getCategories from "@salesforce/apex/Categories.getCategories";
 
 
 export default class Navbar extends LightningElement {
-
-
 	_linkOneText
 	set linkOneText(value) {
 		this._linkOneText = value
@@ -124,13 +122,23 @@ export default class Navbar extends LightningElement {
 		return this._linkSixURL;
 	}
 
+	_categories
+	set categories(value) {
+		this._categories = value;
+	}
+	get categories() {
+		return this._categories;
+	}
+
     @wire(getCategories, {
         communityId: communityId,
         CategoryId: null,
     })
 	handleCategories({ error, data }) {
 		if (data) {
-			console.log(JSON.parse(data));
+			this.categories = JSON.parse(data);
+		} else if (error) {
+			console.log(error);
 		}
 	}
 }
