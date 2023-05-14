@@ -1,9 +1,62 @@
 import { LightningElement, api, wire } from "lwc";
 import communityId from "@salesforce/community/Id"
+import communityBasePath from "@salesforce/community/basePath"
 import getCategories from "@salesforce/apex/Categories.getCategories";
+import getContent from "@salesforce/apex/Content.getContent";
 
 
 export default class Navbar extends LightningElement {
+    @wire(getCategories, {
+        communityId: communityId,
+        CategoryId: null,
+    })
+	handleCategories({ error, data }) {
+		console.log('CommunityId:: ', communityId);
+		if (data) {
+			this.categories = JSON.parse(data);
+		} else if (error) {
+			console.log(error);
+		}
+	}
+
+	// get logo image cms
+	@wire(getContent, {
+		communityId: communityId,
+        contentId: "_logoImageCMS",
+        pageParam: 0,
+        pageSize: 1,
+        language: "en_US",
+        showAbsoluteUrl: true,
+    })
+	handleContent({ error, data }) {
+		if (data) {
+			this.logoImageURL = data.source.url;
+		} else if (error) {
+			console.log(error);
+		}
+	}
+
+
+	_logoImageCMS
+	set logoImageCMS(value) {
+		console.log("Image Val: ", value);
+		this._logoImageCMS = value;
+	}
+	@api
+	get logoImageCMS() {
+		return this._logoImageCMS;
+	}
+
+
+	_logoImageURL
+	set logoImageURL(value) {
+		this._logoImageURL = value;
+	}
+	get logoImageURL() {
+		return this._logoImageURL;
+	}
+
+
 	_linkOneText
 	set linkOneText(value) {
 		this._linkOneText = value
@@ -130,15 +183,8 @@ export default class Navbar extends LightningElement {
 		return this._categories;
 	}
 
-    @wire(getCategories, {
-        communityId: communityId,
-        CategoryId: null,
-    })
-	handleCategories({ error, data }) {
-		if (data) {
-			this.categories = JSON.parse(data);
-		} else if (error) {
-			console.log(error);
-		}
+	get homeLink() {
+		return communityBasePath ? communityBasePath : "/";
 	}
+
 }

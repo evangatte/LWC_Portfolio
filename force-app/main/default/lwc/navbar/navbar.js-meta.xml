@@ -12,6 +12,12 @@
     </targets>
         <targetConfigs>
             <targetConfig targets="lightningCommunity__Default">
+                <property 
+                    type="ContentReference" 
+                    name="logoImageCMS" 
+                    label="Logo Image" 
+                    filter="cms_image"
+                />
                 <property
                     name="linkOneText"
                     label="Link One Text"

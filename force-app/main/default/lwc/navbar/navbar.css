@@ -23,10 +23,14 @@
 	flex-grow: 1;
 }
 
-.top-nav-middle .logo {
+.top-nav-middle .logo-link {
 	text-decoration: none;
-	font-size: 40px;
 	color: black;
+}
+
+.top-nav-middle .logo-image {
+	height: 75px;
+	width: auto;
 }
 
 .top-nav-right {
@@ -36,6 +40,8 @@
 }
 
 .bottom-nav {
+	border-top: 1px solid #222222;
+	border-bottom: 1px solid #222222;
 	padding: 0px;
 }
 
