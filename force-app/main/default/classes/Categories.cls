@@ -46,8 +46,8 @@ public with sharing class Categories {
                 categories.add(newCategory);
             }
         } catch (Exception e) {
-            ConnectApi.productCategoryDetail test = ConnectApi.commerceCatalog.getProductCategory(webStoreId, categoryId, null, fields, False, null, True);
-            FormattedCategory newCategory = new FormattedCategory(test, basePath);
+            ConnectApi.productCategoryDetail cat = ConnectApi.commerceCatalog.getProductCategory(webStoreId, categoryId, null, fields, False, null, True);
+            FormattedCategory newCategory = new FormattedCategory(cat, basePath);
             categories.add(newCategory);
             return categories;
         }
