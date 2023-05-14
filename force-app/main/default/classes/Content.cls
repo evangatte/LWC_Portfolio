@@ -1,7 +1,6 @@
 public with sharing class Content {
     @AuraEnabled(cacheable=true)
     public static Map<String, ConnectApi.ManagedContentNodeValue> getContent(
-    // public static ConnectApi.ManagedContentVersionCollection getContent(
         String communityId,
         String[] managedContentIds,
         Integer pageParam,
