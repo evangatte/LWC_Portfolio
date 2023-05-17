@@ -1,7 +1,7 @@
 # Lightning Web Components built on Salesforce Experience Cloud
 
 - Apex code: `force-app/main/default/classes`
-- Javascript code: `force-app/main/default/lwc`
+- Lightning Web Components: `force-app/main/default/lwc`
 
 ### Components
 #### Navbar Component features:
